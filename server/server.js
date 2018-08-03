@@ -23,9 +23,21 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 app.all('/api/login_mobile', (req, res) => {
-    //console.log(req.body.email);
-    //console.log(req.body.password);
-    res.status(200).send({});
+    var email = req.body.email;
+    res.status(200).send({
+        data: {
+            token: '',
+            timeout: '2020-12-20T00:00:00',
+            email,
+            name: 'Pratchaya',
+            surname: 'Chailangka',
+            gender: 'male',
+            idCard: '3101900230171',
+            phone: null,
+            mobile: '0891366606',
+            addr: null
+        }
+    });
 });
 
 //app.listen(port, () => {
