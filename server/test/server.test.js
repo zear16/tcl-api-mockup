@@ -16,11 +16,6 @@ describe('Server', () => {
                 .send('email=zear16@gmail.com')
                 .send('password=123')
                 .set('Accept', 'application.json')
-                //.expect(200)
-                //.expect((res) => {
-                //    expect(res.body).toMatchObject({});
-                //})
-                //.end(done);
                 .end((err, res) => {
                     res.should.have.status(200);
                     done();

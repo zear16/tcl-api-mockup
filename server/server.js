@@ -9,7 +9,6 @@ const port = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({
     extended: true
 }));
-
 app.use(bodyParser.json());
 
 app.all('/api/login_mobile', (req, res) => {
@@ -21,7 +20,6 @@ app.all('/api/login_mobile', (req, res) => {
 app.listen(port, () => {
     console.log(`Started up at port ${port}`);
 });
-//app.listen(3000);
 
 module.exports = {
     app
