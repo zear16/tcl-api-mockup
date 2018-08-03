@@ -4,7 +4,7 @@ const https = require('https');
 const express = require('express');
 const bodyParser = require('body-parser');
 
-const port = process.env.PORT || 3000;
+const port = parseInt(process.env.PORT, 10) || 3000;
 const keyPath = process.env.KEY_PATH || 'server/cert';
 
 var privateKey = fs.readFileSync(`./${keyPath}/server.key`);
