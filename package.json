@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node server/server.js",
-    "test": "mocha server/**/*.test.js --exit",
+    "test": "env KEY_PATH=server/cert.test mocha server/**/*.test.js --exit",
     "test-jest": "jest --detectOpenHandles",
     "test-watch": "nodemon --exec \"npm test\""
   },
