@@ -1,12 +1,11 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 
-var app = express();
+let app = express();
 
 const port = process.env.PORT || 3000;
 
 // Config middleware
-
 app.use(bodyParser.urlencoded({
     extended: true
 }));
@@ -22,6 +21,7 @@ app.all('/api/login_mobile', (req, res) => {
 app.listen(port, () => {
     console.log(`Started up at port ${port}`);
 });
+//app.listen(3000);
 
 module.exports = {
     app
