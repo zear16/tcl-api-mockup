@@ -7,24 +7,24 @@ pipeline {
     tools {nodejs "node"}
 
     stages {
-        stage('Build') {
+         stage('Build') {
             steps {
 	            echo 'Building...'
 	            sh 'npm install'
-	        }
-        }
-        stage('Test') {
+	         }
+         }
+         stage('Test') {
             steps {
 	            echo 'Testing...'
 	            sh 'npm test'
-	        }
-        }
-        stage('Deploy') {
+	         }
+         }
+         stage('Deploy') {
             steps {
-                echo 'Deploying...'
-                sh 'chmod u+x deploy.sh'
-                sh './deploy.sh'
+               echo 'Deploying...'
+               sh 'chmod u+x deploy.sh'
+               sh './deploy.sh'
             }
-        }
+         }
     }
 }

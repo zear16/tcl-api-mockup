@@ -32,7 +32,7 @@ app.all('/api/login_mobile', (req, res) => {
             name: 'Pratchaya',
             surname: 'Chailangka',
             gender: 'male',
-            idCard: '3101900230171',
+            idCard: '1234567890123',
             phone: null,
             mobile: '0891366606',
             addr: null
