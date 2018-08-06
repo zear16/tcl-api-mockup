@@ -1,5 +1,7 @@
 const express = require('express');
 const router = express.Router();
+const parks = require('../db/park');
+const cities = require('../db/city');
 
 router.use((req, res, next) => {
     next();
@@ -56,20 +58,9 @@ router.all('/city', (req, res) => {
     res.status(200).send({
         code: 0,
         msg: '',
-        data: [
-            {
-                id: 1,
-                desc: "กระบี่"
-            },
-            {
-                id: 24,
-                desc: "กรุงเทพมหานคร"
-            }
-        ]
+        data: cities
     });
 });
-
-const parks = require('../db/parks');
 
 router.all('/park', (req, res) => {
     var token = req.body.token;
@@ -94,6 +85,68 @@ router.all('/park', (req, res) => {
     } else {
         return res.status(404).send();
     }
+});
+
+router.all('/trip', (req, res) => {
+    var token = req.body.token;
+    var departureDate = new Date().toISOString().substring(0, 10);
+    var returnDate = new Date(new Date().getTime() + (1440*60000)).toISOString();
+    res.status(200).send({
+        code: 0,
+        msg: 'OK',
+        data: {
+            dptrTrips: {
+                tripDate: departureDate,
+                trips: [
+                    {
+                        id: 1,
+                        date: departureDate,
+                        time: '09:00:00'
+                    },
+                    {
+                        id: 2,
+                        date: departureDate,
+                        time: '12:00:00'
+                    },
+                    {
+                        id: 3,
+                        date: departureDate,
+                        time: '15:00:00'
+                    },
+                    {
+                        id: 4,
+                        date: departureDate,
+                        time: '18:00:00'
+                    }
+                ]
+            },
+            rtrnTrips: {
+                tripDate: returnDate,
+                trips: [
+                    {
+                        id: 11,
+                        date: returnDate,
+                        time: '10:30:00'
+                    },
+                    {
+                        id: 12,
+                        date: returnDate,
+                        time: '13:30:00'
+                    },
+                    {
+                        id: 13,
+                        date: returnDate,
+                        time: '16:30:00'
+                    },
+                    {
+                        id: 14,
+                        date: returnDate,
+                        time: '19:30:00'
+                    }
+                ]
+            }
+        }
+    })
 });
 
 module.exports = router;

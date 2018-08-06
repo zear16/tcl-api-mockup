@@ -89,6 +89,20 @@ describe('Server', () => {
         })
     });
 
+    describe('GET /api/trip', () => {
+        it('Should return status 200', (done) => {
+            chai.request(app)
+                .get('/api/trip')
+                .send(`token=${token}`)
+                .end((err, res) => {
+                    res.should.have.status(200);
+                    res.body.data.dptrTrips.trips.should.be.an('array');
+                    res.body.data.rtrnTrips.trips.should.be.an('array');
+                    done();
+                });
+        })
+    });
+
     describe('GET /ads', () => {
         it('Should return status 200', (done) => {
             chai.request(app)
