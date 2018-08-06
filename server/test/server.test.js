@@ -37,6 +37,18 @@ describe('Server', () => {
         });
     });
 
+    describe('GET /api/trans_get', () => {
+        it('Should return status 200', (done) => {
+            chai.request(app)
+                .get('/api/trans_get')
+                .send('sessionId=01234567890123')
+                .end((err, res) => {
+                    res.should.have.status(200);
+                    done();
+                })
+        })
+    });
+
     describe('GET /ads', () => {
         it('Should return status 200', (done) => {
             chai.request(app)

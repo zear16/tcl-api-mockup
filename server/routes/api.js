@@ -35,4 +35,21 @@ router.all('/subscribe', (req, res) => {
     })
 });
 
+router.all('/trans_get', (req, res) => {
+    var sessionId = req.body.sessionId;
+    var transType = req.body.transType;
+    var channelType = req.body.channelType;
+    var referTrans = req.body.referTrans;
+    var remark = req.body.remark;
+    var timeout = new Date();
+    res.status(200).send({
+        code: 0,
+        msg: '',
+        data: {
+            transId: '01234567890123',
+            timeout: new Date(timeout.getTime() + (30*60000)).toISOString()
+        }
+    });
+});
+
 module.exports = router;
