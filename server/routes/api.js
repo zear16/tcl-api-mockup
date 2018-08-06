@@ -23,4 +23,16 @@ router.all('/login_mobile', (req, res) => {
     });
 });
 
+router.all('/subscribe', (req, res) => {
+    var emailId = req.body.emailId;
+    var firebaseToken = req.body.firebaseToken;
+    res.status(200).send({
+        code: 0,
+        msg: '',
+        data: {
+
+        }
+    })
+});
+
 module.exports = router;

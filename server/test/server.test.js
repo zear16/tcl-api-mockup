@@ -23,6 +23,20 @@ describe('Server', () => {
         });
     });
 
+    describe('GET /api/subscribe', () => {
+        it('Should return status 200', (done) => {
+            chai.request(app)
+                .get('/api/subscribe')
+                .send('emailId=zear16@gmail.com')
+                .send('firebaseToken=abc')
+                .set('Accept', 'application.json')
+                .end((err, res) => {
+                    res.should.have.status(200);
+                    done();
+                });
+        });
+    });
+
     describe('GET /ads', () => {
         it('Should return status 200', (done) => {
             chai.request(app)
