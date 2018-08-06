@@ -7,6 +7,8 @@ let app = require('./../server').app;
 
 chai.use(chaiHttp);
 
+const token = '01234567890';
+
 describe('Server', () => {
 
     describe('GET /api/login_mobile', () => {
@@ -53,13 +55,38 @@ describe('Server', () => {
         it('Should return status 200', (done) => {
             chai.request(app)
                 .get('/api/city')
-                .send('token=01234567890')
+                .send(`token=${token}`)
                 .end((err, res) => {
                     res.should.have.status(200);
                     res.body.data.should.be.an('array');
                     done();
                 });
         });
+    });
+
+    describe('GET /api/park', () => {
+        it('Should return status 200 if park found', (done) => {
+            chai.request(app)
+                .get('/api/park')
+                .send(`token=${token}`)
+                .send('city=24')
+                .end((err, res) => {
+                    res.should.have.status(200);
+                    res.body.data.should.be.an('array');
+                    done();
+                });
+        });
+
+        it('Should return status 404 if city not found', (done) => {
+            chai.request(app)
+                .get('/api/park')
+                .send(`token=${token}`)
+                .send('city=999')
+                .end((err, res) => {
+                    res.should.have.status(404);
+                    done();
+                });
+        })
     });
 
     describe('GET /ads', () => {
