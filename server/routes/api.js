@@ -52,4 +52,21 @@ router.all('/trans_get', (req, res) => {
     });
 });
 
+router.all('/city', (req, res) => {
+    res.status(200).send({
+        code: 0,
+        msg: '',
+        data: [
+            {
+                id: 1,
+                desc: "กรุงเทพมหานคร"
+            },
+            {
+                id: 2,
+                desc: "กระบี่"
+            }
+        ]
+    });
+});
+
 module.exports = router;

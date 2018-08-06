@@ -49,6 +49,19 @@ describe('Server', () => {
         })
     });
 
+    describe('GET /api/city', () => {
+        it('Should return status 200', (done) => {
+            chai.request(app)
+                .get('/api/city')
+                .send('token=01234567890')
+                .end((err, res) => {
+                    res.should.have.status(200);
+                    res.body.data.should.be.an('array');
+                    done();
+                });
+        });
+    });
+
     describe('GET /ads', () => {
         it('Should return status 200', (done) => {
             chai.request(app)
