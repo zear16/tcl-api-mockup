@@ -101,22 +101,62 @@ router.all('/trip', (req, res) => {
                     {
                         id: 1,
                         date: departureDate,
-                        time: '09:00:00'
+                        time: '09:00:00',
+                        dptrPark: {
+                            id: 1,
+                            desc: '',
+                            descEn: '',
+                            terminal: '',
+                            province: {
+                                id: 24,
+                                desc: ''
+                            }
+                        }
                     },
                     {
                         id: 2,
                         date: departureDate,
-                        time: '12:00:00'
+                        time: '12:00:00',
+                        dptrPark: {
+                            id: 1,
+                            desc: '',
+                            descEn: '',
+                            terminal: '',
+                            province: {
+                                id: 24,
+                                desc: ''
+                            }
+                        }
                     },
                     {
                         id: 3,
                         date: departureDate,
-                        time: '15:00:00'
+                        time: '15:00:00',
+                        dptrPark: {
+                            id: 1,
+                            desc: '',
+                            descEn: '',
+                            terminal: '',
+                            province: {
+                                id: 24,
+                                desc: ''
+                            }
+                        }
                     },
                     {
                         id: 4,
                         date: departureDate,
-                        time: '18:00:00'
+                        time: '18:00:00',
+                        dptrPark: {
+                            id: 1,
+                            desc: '',
+                            descEn: '',
+                            terminal: '',
+                            province: {
+                                id: 24,
+                                desc: ''
+                            }
+                        }
                     }
                 ]
             },
@@ -126,22 +166,62 @@ router.all('/trip', (req, res) => {
                     {
                         id: 11,
                         date: returnDate,
-                        time: '10:30:00'
+                        time: '10:30:00',
+                        dptrPark: {
+                            id: 1,
+                            desc: '',
+                            descEn: '',
+                            terminal: '',
+                            province: {
+                                id: 24,
+                                desc: ''
+                            }
+                        }
                     },
                     {
                         id: 12,
                         date: returnDate,
-                        time: '13:30:00'
+                        time: '13:30:00',
+                        dptrPark: {
+                            id: 1,
+                            desc: '',
+                            descEn: '',
+                            terminal: '',
+                            province: {
+                                id: 24,
+                                desc: ''
+                            }
+                        }
                     },
                     {
                         id: 13,
                         date: returnDate,
-                        time: '16:30:00'
+                        time: '16:30:00',
+                        dptrPark: {
+                            id: 1,
+                            desc: '',
+                            descEn: '',
+                            terminal: '',
+                            province: {
+                                id: 24,
+                                desc: ''
+                            }
+                        }
                     },
                     {
                         id: 14,
                         date: returnDate,
-                        time: '19:30:00'
+                        time: '19:30:00',
+                        dptrPark: {
+                            id: 1,
+                            desc: '',
+                            descEn: '',
+                            terminal: '',
+                            province: {
+                                id: 24,
+                                desc: ''
+                            }
+                        }
                     }
                 ]
             }
