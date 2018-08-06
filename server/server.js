@@ -25,6 +25,8 @@ app.use(bodyParser.json());
 
 app.use('/api', require('./routes/api'));
 
+app.use(require('./routes/ads'));
+
 httpServer.listen(port, () => {
     console.log(`Started up HTTP at port ${port}`);
 });

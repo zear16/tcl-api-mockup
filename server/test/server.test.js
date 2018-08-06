@@ -23,6 +23,18 @@ describe('Server', () => {
         });
     });
 
+    describe('GET /ads', () => {
+        it('Should return status 200', (done) => {
+            chai.request(app)
+                .get('/ads')
+                .end((err, res) => {
+                    res.should.have.status(200);
+                    res.body.should.be.an('array');
+                    done();
+                });
+        });
+    });
+
 });
 
 
