@@ -111,6 +111,10 @@ router.all('/trip', (req, res) => {
                                 id: 24,
                                 desc: ''
                             }
+                        },
+                        busStd: {
+                            id: 1,
+                            desc: ''
                         }
                     },
                     {
@@ -126,6 +130,10 @@ router.all('/trip', (req, res) => {
                                 id: 24,
                                 desc: ''
                             }
+                        },
+                        busStd: {
+                            id: 1,
+                            desc: ''
                         }
                     },
                     {
@@ -141,6 +149,10 @@ router.all('/trip', (req, res) => {
                                 id: 24,
                                 desc: ''
                             }
+                        },
+                        busStd: {
+                            id: 1,
+                            desc: ''
                         }
                     },
                     {
@@ -156,6 +168,10 @@ router.all('/trip', (req, res) => {
                                 id: 24,
                                 desc: ''
                             }
+                        },
+                        busStd: {
+                            id: 1,
+                            desc: ''
                         }
                     }
                 ]
@@ -176,6 +192,10 @@ router.all('/trip', (req, res) => {
                                 id: 24,
                                 desc: ''
                             }
+                        },
+                        busStd: {
+                            id: 1,
+                            desc: ''
                         }
                     },
                     {
@@ -191,6 +211,10 @@ router.all('/trip', (req, res) => {
                                 id: 24,
                                 desc: ''
                             }
+                        },
+                        busStd: {
+                            id: 1,
+                            desc: ''
                         }
                     },
                     {
@@ -206,6 +230,10 @@ router.all('/trip', (req, res) => {
                                 id: 24,
                                 desc: ''
                             }
+                        },
+                        busStd: {
+                            id: 1,
+                            desc: ''
                         }
                     },
                     {
@@ -221,6 +249,10 @@ router.all('/trip', (req, res) => {
                                 id: 24,
                                 desc: ''
                             }
+                        },
+                        busStd: {
+                            id: 1,
+                            desc: ''
                         }
                     }
                 ]
