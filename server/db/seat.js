@@ -1,3 +1,19 @@
+const getSeat = (x, y, z, h, w, status) => {
+    return {
+        type: 1,
+        pos: {
+            x,
+            y,
+            z
+        },
+        dim: {
+            h,
+            w
+        },
+        status
+    }
+}
+
 const seat = {
     id: 1,
     code: 0,
@@ -50,7 +66,11 @@ const seat = {
                 w: 2
             },
             name: 'พนักงานขับรถ'
-        }
+        },
+        getSeat(0, 1, 0, 1, 1, 'F'),
+        getSeat(1, 1, 0, 1, 1, 'F'),
+        getSeat(3, 1, 0, 1, 1, 'F'),
+        getSeat(4, 1, 0, 1, 1, 'F')
     ]
 };
 
