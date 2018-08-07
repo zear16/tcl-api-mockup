@@ -135,4 +135,15 @@ router.all('/seat_mark', (req, res) => {
     })
 });
 
+router.all('/seat_unmark', (req, res) => {
+    var reserveId = req.body.reserveId[0];
+    var seatFloor = req.body.seatFloor[0];
+    var seatNo = req.body.seatNo[0];
+    res.status(200).send({
+        code: 0,
+        msg: 'OK',
+        data: null
+    });
+});
+
 module.exports = router;

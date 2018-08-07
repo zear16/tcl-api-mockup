@@ -146,6 +146,20 @@ describe('Server', () => {
         });
     });
 
+    describe('POST /api/seat_unmark', () => {
+        it('Should return status 200', (done) => {
+            chai.request(app)
+                .get('/api/seat_unmark')
+                .send('reserveId=1')
+                .send('seatFloor[0]=2')
+                .send('seatNo[0]=A1')
+                .end((err, res) => {
+                    res.should.have.status(200);
+                    done();
+                });
+        });
+    });
+
     describe('GET /ads', () => {
         it('Should return status 200', (done) => {
             chai.request(app)
