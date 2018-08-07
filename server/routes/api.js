@@ -3,6 +3,7 @@ const router = express.Router();
 const parks = require('../db/park');
 const cities = require('../db/city');
 const trip = require('../db/trip');
+const seat = require('../db/seat');
 
 router.use((req, res, next) => {
     next();
@@ -107,6 +108,16 @@ router.all('/seat_unmark_trans', (req, res) => {
         msg: 'OK',
         data: null
     });
+});
+
+router.all('/seat', (req, res) => {
+    var token = req.body.token;
+    var transId = req.body.transId;
+    res.status(200).send({
+        code: 0,
+        msg: 'OK',
+        data: seat
+    })
 });
 
 module.exports = router;

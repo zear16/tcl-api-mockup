@@ -8,6 +8,7 @@ let app = require('./../server').app;
 chai.use(chaiHttp);
 
 const token = '01234567890';
+const transId = '01234567890';
 
 describe('Server', () => {
 
@@ -108,6 +109,19 @@ describe('Server', () => {
             chai.request(app)
                 .get('/api/seat_unmark_trans')
                 .send(`token=${token}`)
+                .end((err, res) => {
+                    res.should.have.status(200);
+                    done();
+                });
+        });
+    });
+
+    describe('GET /api/seat', () => {
+        it('Should return status 200', (done) => {
+            chai.request(app)
+                .get('/api/seat')
+                .send(`token=${token}`)
+                .send(`transId=${transId}`)
                 .end((err, res) => {
                     res.should.have.status(200);
                     done();
