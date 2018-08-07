@@ -1,16 +1,18 @@
 const getSeat = (x, y, z, h, w, status) => {
     return {
         type: 1,
-        pos: {
-            x,
-            y,
-            z
-        },
-        dim: {
-            h,
-            w
-        },
+        pos: {x, y, z},
+        dim: {h, w},
         status
+    }
+}
+
+const getObject = (x, y, z, h, w, name) => {
+    return {
+        type: 2,
+        pos: {x, y, z},
+        dim: {h, w},
+        name
     }
 }
 
@@ -28,49 +30,45 @@ const seat = {
     rows: 10,
     platform: '',
     objects: [
-        {
-            type: 2,
-            pos: {
-                x: 0,
-                y: 0,
-                z: 0
-            },
-            dim: {
-                h: 1,
-                w: 2
-            },
-            name: 'ทางขึ้น'
-        },
-        {
-            type: 2,
-            pos: {
-                x: 2,
-                y: 0,
-                z: 0
-            },
-            dim: {
-                h: 10,
-                w: 1
-            },
-            name: 'ทางเดิน'
-        },
-        {
-            type: 2,
-            pos: {
-                x: 3,
-                y: 0,
-                z: 0
-            },
-            dim: {
-                h: 1,
-                w: 2
-            },
-            name: 'พนักงานขับรถ'
-        },
-        getSeat(0, 1, 0, 1, 1, 'F'),
-        getSeat(1, 1, 0, 1, 1, 'F'),
-        getSeat(3, 1, 0, 1, 1, 'F'),
-        getSeat(4, 1, 0, 1, 1, 'F')
+        getObject(1, 1, 1, 1, 2, 'ทางขึ้น'),
+        getObject(3, 1, 1, 10, 1, 'ทางเดิน'),
+        getObject(4, 1, 1, 1, 2, 'พนักงานขับรถ'),
+        getSeat(1, 2, 1, 1, 1, 'F'),
+        getSeat(2, 2, 1, 1, 1, 'F'),
+        getSeat(4, 2, 1, 1, 1, 'F'),
+        getSeat(5, 2, 1, 1, 1, 'F'),
+        getSeat(1, 3, 1, 1, 1, 'F'),
+        getSeat(2, 3, 1, 1, 1, 'F'),
+        getSeat(4, 3, 1, 1, 1, 'F'),
+        getSeat(5, 3, 1, 1, 1, 'F'),
+        getSeat(1, 4, 1, 1, 1, 'F'),
+        getSeat(2, 4, 1, 1, 1, 'F'),
+        getSeat(4, 4, 1, 1, 1, 'F'),
+        getSeat(5, 4, 1, 1, 1, 'F'),
+        getSeat(1, 5, 1, 1, 1, 'F'),
+        getSeat(2, 5, 1, 1, 1, 'F'),
+        getSeat(4, 5, 1, 1, 1, 'F'),
+        getSeat(5, 5, 1, 1, 1, 'F'),
+        getSeat(1, 6, 1, 1, 1, 'F'),
+        getSeat(2, 6, 1, 1, 1, 'F'),
+        getSeat(4, 6, 1, 1, 1, 'F'),
+        getSeat(5, 6, 1, 1, 1, 'F'),
+        getSeat(1, 7, 1, 1, 1, 'F'),
+        getSeat(2, 7, 1, 1, 1, 'F'),
+        getSeat(4, 7, 1, 1, 1, 'F'),
+        getSeat(5, 7, 1, 1, 1, 'F'),
+        getSeat(1, 8, 1, 1, 1, 'F'),
+        getSeat(2, 8, 1, 1, 1, 'F'),
+        getSeat(4, 8, 1, 1, 1, 'F'),
+        getSeat(5, 8, 1, 1, 1, 'F'),
+        getSeat(1, 9, 1, 1, 1, 'F'),
+        getSeat(2, 9, 1, 1, 1, 'F'),
+        getSeat(4, 9, 1, 1, 1, 'F'),
+        getSeat(5, 9, 1, 1, 1, 'F'),
+        getSeat(1, 10, 1, 1, 1, 'F'),
+        getSeat(2, 10, 1, 1, 1, 'F'),
+        getSeat(4, 10, 1, 1, 1, 'F'),
+        getSeat(5, 10, 1, 1, 1, 'F')
     ]
 };
 
