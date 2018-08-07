@@ -129,6 +129,23 @@ describe('Server', () => {
         });
     });
 
+    describe('GET /api/seat_mark', () => {
+        it('Should return status 200', (done) => {
+            chai.request(app)
+                .get('/api/seat_mark')
+                .send('seatFloor[0]=2')
+                .send('seatNo[0]=A1')
+                .send('gender=M')
+                .end((err, res) => {
+                    res.should.have.status(200);
+                    res.body.data.should.be.an('array');
+                    res.body.data[0].should.have.property('seatFloor', '2');
+                    res.body.data[0].should.have.property('seatNo', 'A1');
+                    done();
+                });
+        });
+    });
+
     describe('GET /ads', () => {
         it('Should return status 200', (done) => {
             chai.request(app)

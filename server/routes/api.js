@@ -120,4 +120,19 @@ router.all('/seat', (req, res) => {
     })
 });
 
+router.all('/seat_mark', (req, res) => {
+    var seatFloor = req.body.seatFloor[0];
+    var seatNo = req.body.seatNo[0];
+    var gender = req.body.gender[0];
+    res.status(200).send({
+        code: 0,
+        msg: 'OK',
+        data: [{
+            reserveId: 1,
+            seatFloor,
+            seatNo
+        }]
+    })
+});
+
 module.exports = router;
