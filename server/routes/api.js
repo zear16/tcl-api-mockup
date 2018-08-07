@@ -99,4 +99,14 @@ router.all('/trip', (req, res) => {
     });
 });
 
+router.all('/seat_unmark_trans', (req, res) => {
+    var token = req.body.token;
+    var transId = req.body.transId;
+    res.status(200).send({
+        code: 0,
+        msg: 'OK',
+        data: null
+    });
+});
+
 module.exports = router;

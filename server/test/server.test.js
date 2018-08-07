@@ -103,6 +103,18 @@ describe('Server', () => {
         })
     });
 
+    describe('GET /api/seat_unmark_trans', () => {
+        it('Should return status 200', (done) => {
+            chai.request(app)
+                .get('/api/seat_unmark_trans')
+                .send(`token=${token}`)
+                .end((err, res) => {
+                    res.should.have.status(200);
+                    done();
+                });
+        });
+    });
+
     describe('GET /ads', () => {
         it('Should return status 200', (done) => {
             chai.request(app)
